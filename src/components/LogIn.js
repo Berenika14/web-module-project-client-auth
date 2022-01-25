@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Login = () => {
+  const [state, setState] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log(state);
   return (
     <div>
       <h1>Log In</h1>
@@ -10,6 +23,7 @@ const Login = () => {
           type="text"
           name="username"
           placeholder="Username"
+          onChange={handleChange}
         />
         <br />
         <input
@@ -17,6 +31,7 @@ const Login = () => {
           type="password"
           name="password"
           placeholder="Password"
+          onChange={handleChange}
         />
         <br />
         <button
