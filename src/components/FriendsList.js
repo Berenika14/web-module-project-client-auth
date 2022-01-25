@@ -3,7 +3,16 @@ import React from "react";
 const FriendsList = () => {
   return (
     <div>
-      <h2>Friends List</h2>
+      <h1>--Friends List--</h1>
+      <ul>
+        <li>Name - Email</li>
+        <br />
+        <li>Name - Email</li>
+        <br />
+        <li>Name - Email</li>
+        <br />
+        <li>Name - Email</li>
+      </ul>
     </div>
   );
 };
