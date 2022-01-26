@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+  const { push } = useHistory();
   const [state, setState] = useState({
     username: "",
     password: "",
@@ -13,11 +16,23 @@ const Login = () => {
     });
   };
 
-  console.log(state);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:9000/api/login", state)
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem("token", res.data.token);
+        push("friends");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
-      <h1>Log In</h1>
-      <form>
+      <h2>Log In</h2>
+      <form onSubmit={handleSubmit}>
         <input
           style={{ height: "30px" }}
           type="text"
