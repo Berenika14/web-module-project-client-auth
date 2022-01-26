@@ -14,6 +14,7 @@ function App() {
           <Link to="/login">Log In</Link>
           <Link to="/friends">FriendsList</Link>
           <Link to="/friends/add">Add Friend</Link>
+          <Link to="/">Log out</Link>
         </div>
         <Route exact path="/">
           <LogIn />
