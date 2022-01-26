@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import LogIn from "./components/LogIn";
 import FriendsList from "./components/FriendsList";
 import AddFriend from "./components/AddFriend";
+import LogOut from "./components/LogOut";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Link to="/login">Log In</Link>
           <Link to="/friends">FriendsList</Link>
           <Link to="/friends/add">Add Friend</Link>
-          <Link to="/">Log out</Link>
+          <Link to="/logout">Log out</Link>
         </div>
         <Route exact path="/">
           <LogIn />
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route exact path="/friends/add">
           <AddFriend />
+        </Route>
+        <Route exact path="/logout">
+          <LogOut />
         </Route>
       </div>
     </Router>
