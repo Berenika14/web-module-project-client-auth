@@ -17,7 +17,6 @@ const LogOut = () => {
         }
       )
       .then((res) => {
-        console.log(res);
         localStorage.removeItem("token");
         push("/login");
       })
